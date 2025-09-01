@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="gallery-container">
+    <!-- العنوان الرئيسي -->
+    <div class="gallery-title-container">
+        <div class="gallery-heading-container"> <!-- حاوية جديدة للعنوان مع الخلفية -->
+
+        <h1 class="gallery-title">{% trans "OUR GALLERY" %}</h1>
+        </div>
+    </div>
+
+   <!-- شبكة الصور -->
+    {% if gallery_images %}
+    <div class="gallery-grid">
+        {% for img in gallery_images %}
+        <div class="gallery-item">
+            <!-- استخدم المسار الصحيح للصورة -->
+            <img src="{% static img %}" 
+                 alt="معرض أعمال سعيد عمر للسراميك" 
+                 loading="lazy">
+        </div>
+        {% endfor %}
+    </div>
+  
+    {% endif %}
+    
+{% endblock %}

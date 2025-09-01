@@ -1,0 +1,834 @@
+/* أنماط عامة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-image: url("../images/backgrounds/bac6.4a709407e255.png");
+    background-size: cover;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;
+    color: #faf4f4;
+    text-align: center;
+    min-height: 100vh; /* الحد الأدنى لارتفاع الصفحة */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* طبقة شفافة فوق الخلفية لتحسين قراءة النص */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* طبقة سوداء شفافة */
+    z-index: -1; /* تحت المحتوى */
+}
+
+/* رأس الصفحة */
+.main-header {
+    background-color: rgba(116, 99, 99, 0.8);
+    padding: 15px 0;
+    /*border-bottom: 3px solid #8B4513;*/
+}
+/* خط فاصل تحت الهيدر */
+.header-divider {
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        #e0b48d 20%, 
+        #e0b48d 80%, 
+        transparent 100%);
+    width: 80%;
+    margin: 10px auto 0 auto;
+}
+
+/* تذييل الصفحة */
+.main-footer {
+    padding: 20px 0;
+    text-align: center;
+    color: #e0b48d;
+    background-color:  rgba(116, 99, 99, 0.8);
+    font-size: 0.9rem;
+    margin-top:auto;
+    width: 100%;
+}
+
+.main-footer p {
+    margin: 5px 0;
+}
+
+/* الخط الفاصل للتذييل */
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        #e0b48d 20%, 
+        #e0b48d 80%, 
+        transparent 100%);
+    width: 80%;
+    margin: 0 auto 15px auto;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.company-info h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #e0b48d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slogan {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* الأزرار الرأسية */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.vertical-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    max-width: 600px;
+}
+
+.nav-btn {
+    display: block;
+    padding: 15px 20px;
+    background-color:  rgba(87, 60, 60, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid #e0b48d;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.btn-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #e0b48d;
+    text-transform: uppercase;
+}
+
+.btn-desc {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.nav-btn:hover {
+    background-color: rgba(50, 50, 50, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    border-color: #ffd700;
+}
+/* بقية الأنماط كما هي */
+.about-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.about-title {
+    color: #e0b48d; /* نفس لون الهيدر */
+    font-size: 2.5rem;
+    margin: 0; /* إزالة الهوامش الافتراضية */
+     text-align: center; /* توسيط النص */
+
+   
+}
+
+
+.about-content {
+    background-color: rgba(255, 255, 255, 0.15); /* خلفية شفافة بيضاء */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+    text-align: right;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: left; /* محاذاة النص لليسار */
+    direction: ltr; /* اتجاه الكتابة من اليسار لليمين */
+}
+
+
+
+
+.company-info p {
+    margin: 10px 0;
+}
+
+.back-btn:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* الحاوية الرئيسية للمعرض */
+.gallery-container {
+    max-width: 1200حء;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+/* حاوية العنوان مع الخلفية الشفافة */
+.gallery-heading-container {
+    display: inline-block;
+    padding: 0 50px; /* توسيع أفقي */
+    margin: 5px 0;
+    position: relative;
+  
+}
+
+.gallery-heading-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+}
+.gallery-title{
+    color: #e0b48d; 
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* كل صف يحتوي على 5 صور */
+.gallery-row {
+    display: flex;           /* تخطيط مرن لعرض العناصر أفقيًا */
+    flex-wrap: nowrap;       /* منع الانتقال لأسطر جديدة */
+    justify-content: flex-start; /* محاذاة العناصر من اليسار */
+    gap: 15px;              /* مسافة بين الصور */
+    margin-bottom: 15px;    /* مسافة بين الصفوف */
+    overflow-x: auto;       /* تمكين التمرير الأفقي إذا لزم الأمر */
+    padding-bottom: 10px;   /* مساحة للتمرير */
+}
+
+.gallery-title-container {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto 30px auto;
+    text-align: center;
+    display: inline-block;
+}
+
+/* عناصر الصور الفردية */
+.gallery-item {
+    flex: 0 0 calc(20% - 12px); /* 5 صور في الصف (100%/5 - المسافة) */
+    aspect-ratio: 1/1;      /* نسبة الطول إلى العرض (مربع) */
+    min-width: 180px;       /* أدنى عرض للعنصر */
+    overflow: hidden;       /* إخفاء الأجزاء الزائدة */
+    border-radius: 8px;     /* زوايا مدورة */
+    border: 1px solid #e0b48d; /* حدود ذهبية */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* ظل خفيف */
+    transition: all 0.3s ease; /* تأثير انتقالي سلس */
+}
+
+/* شبكة الصور */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));/*حجم اصغر للعناصر*/
+    gap: 15px;
+    padding: 10px;
+    margin: 0 auto;
+    /* 10 صور في الصف الواحد */
+    grid-template-columns: repeat(10, 80px);
+    justify-content: center;
+}
+
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    aspect-ratio: unset; /* نسبة الطول إلى العرض (يمكن تعديلها) */
+    height: 150px; /* ارتفاع ثابت */
+    width: 150px;
+   /* background-color: rgba(255, 255, 255, 0.1);  خلفية شفافة */
+  /*  padding: 4px;  إطار داخلي */
+
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    border-color: #ffd700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 5; /* التأكد من ظهور الصورة فوق الأخرى عند التكبير */
+}
+
+.gallery-item img {
+    width: 100%;            /* ملء العرض المتاح */
+    height: 100%;           /* ملء الارتفاع المتاح */
+    object-fit: cover;      /* تغطية المساحة مع الحفاظ على النسب */
+    display: block;         /* تجنب المسافات الزائدة تحت الصور */
+    filter: brightness(0.95); /* تخفيف إضاءة الصور قليلاً */
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: brightness(1.05); /* زيادة الإضاءة عند المرور */
+}
+
+/* شريط التمرير (اختياري) */
+.gallery-row::-webkit-scrollbar {
+    height: 6px;           /* ارتفاع شريط التمرير */
+}
+
+.thumbnail {
+    transform: scale(1); /* تصغير الصورة إلى 30% */
+    transform-origin: top left;
+    width: 300%; /* تعويض عن التصغير */
+    height: 300%;
+}
+
+/* صفحة اتصل بنا بحجم أصغر */
+.contact-page {
+    max-width: 500px; /* عرض أصغر */
+    margin: 20px  auto; /* مسافات أقل */
+    padding: 10px; /* حشوة أقل */
+    text-align: center;
+}
+
+/* أنماط صفحة اتصل بنا */
+.contact-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* حاوية النموذج بحجم أصغر */
+.contact-form-container {
+    padding: 20px; /* حشوة أقل */
+    margin-top: 25px; /* مسافة أقل */
+    border-radius: 8px; /* زوايا أقل استدارة */
+    max-width: 500px; /* عرض محدود */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: right;
+
+
+}
+.form-group {
+    margin-bottom: 12px;
+
+}
+.form-title {
+    color: #e0b48d;
+    text-align: center;
+    font-size: 1.3rem; /* حجم عنوان أصغر */
+    margin-bottom: 15px; /* مسافة أقل */
+}
+/* صفوف النموذج */
+.form-row {
+    display: flex;
+    gap: 15px; /* مسافة بين الحقول */
+    margin-bottom: 12px; /* مسافة أقل */
+}
+.form-row .form-group {
+    flex: 1;
+}
+
+.contact-title-container {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto 30px auto;
+    text-align: center;
+    display: inline-block;
+}
+
+.contact-title {
+    color: #e0b48d; 
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* توزيع البطاقات */
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    min-height: 150px;
+}
+
+.contact-form {
+    flex: 1;
+    display: grid;
+    gap: 15px;
+    min-width: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: right;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0b48d;
+    font-weight: bold;
+    font-size: 0.9rem; /* حجم تسميات أصغر */
+
+}
+.contact-form input,
+.contact-form textarea
+ {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #e0b48d;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.3s ease; /* تأثير سلس عند التركيز */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 20px;
+     box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 100px;
+    width: 400px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    width: 100%;
+    max-width: 100%;
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 2px rgba(224, 180, 141, 0.3);
+   
+}
+
+/* تنسيق البطاقات */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    border-left: 3px solid #e0b48d;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 200px; /* حجم ثابت للبطاقات */
+    margin: 15px; /* مسافة بين البطاقات */
+    box-sizing: border-box;
+}
+
+.contact-card p {
+    font-size: 0.85rem; /* حجم نصوص أصغر */
+    margin: 0;
+}
+/* تحسين توزيع العناصر في البطاقات */
+.contact-card h3 {
+    font-size: 1rem;
+    color: white; /* نص أبيض */
+    margin-top: 5px 0;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+/* تنسيق الأيقونات والتلميحات */
+.contact-icon {
+    position: relative;
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #e0b48d;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+}
+
+.contact-icon:hover {
+    background-color: #e0b48d;
+    color: #000;
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* أيقونة العنوان - أحمر */
+.address-icon {
+    background-color: rgba(255, 0, 0, 0.2) !important; /* خلفية حمراء شفافة */
+     color: #ff3333 !important;  /* لون أحمر */
+}
+
+.address-icon:hover {
+    background-color: #ff4d4d !important; /* أحمر صلب عند المرور */
+    color: white !important;
+}
+
+/* أيقونة الهاتف - أسود */
+.phone-icon {
+    background-color: rgba(0, 0, 0, 0.3) !important; /* خلفية سوداء شفافة */
+    color: #222222 !important; /* لون أسود */
+}
+
+.phone-icon:hover {
+    background-color: #333 !important; /* أسود صلب عند المرور */
+    color: white !important;
+}
+
+/* أيقونة واتساب - أخضر */
+.whatsapp-icon {
+    background-color: rgba(37, 211, 102, 0.2) !important; /* خلفية خضراء شفافة */
+    color: #25D366 !important; /* لون واتساب أخضر */
+}
+
+.whatsapp-icon:hover {
+    background-color: #25D366 !important; /* أخضر واتساب صلب عند المرور */
+    color: white !important;
+}
+
+/* أيقونة فيسبوك - أزرق */
+.facebook-icon {
+    background-color: rgba(66, 103, 178, 0.2) !important; /* خلفية زرقاء شفافة */
+   color: #1877f2 !important; /* لون فيسبوك أزرق */
+}
+
+.facebook-icon:hover {
+    background-color: #4267B2 !important; /* أزرق فيسبوك صلب عند المرور */
+    color: white !important;
+}
+/* جعل الألوان أكثر وضوحًا */
+.address-icon { color: #ff0000 !important; } /* أحمر ناصع */
+.phone-icon { color: #000000 !important; } /* أسود ناصع */
+.whatsapp-icon { color: #25D366 !important; } /* أخضر واتساب */
+.facebook-icon { color: #4267B2 !important; } /* أزرق فيسبوك */
+
+/* جعل التلميحات متناسقة مع ألوان الأيقونات */
+.address-icon .contact-tooltip {
+    background-color: rgba(255, 0, 0, 0.9) !important;
+}
+
+.phone-icon .contact-tooltip {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.whatsapp-icon .contact-tooltip {
+    background-color: rgba(37, 211, 102, 0.9) !important;
+}
+
+.facebook-icon .contact-tooltip {
+    background-color: rgba(66, 103, 178, 0.9) !important;
+}
+
+/* تعديل أسهم التلميحات */
+.address-icon .contact-tooltip::after {
+    border-color: rgba(255, 0, 0, 0.9) transparent transparent transparent !important;
+}
+
+.phone-icon .contact-tooltip::after {
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent !important;
+}
+
+.whatsapp-icon .contact-tooltip::after {
+    border-color: rgba(37, 211, 102, 0.9) transparent transparent transparent !important;
+}
+
+.facebook-icon .contact-tooltip::after {
+    border-color: rgba(66, 103, 178, 0.9) transparent transparent transparent !important;
+}
+
+.contact-tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    color: #ffffff !important;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8rem;
+}
+
+.contact-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent !important;
+}
+
+.contact-icon:hover .contact-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.contact-info {
+    color: white;
+    font-size: 0.9rem;
+    margin: 5px 0 0 0;
+}
+
+.submit-btn {
+    background-color: #e0b48d;
+    border: 2px solid #A0522D;
+    color: rgb(32, 31, 31);
+    border: none;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 auto;
+    display: block;
+    width: 100px;
+}
+
+.submit-btn:hover {
+    background-color: #A0522D;
+}
+
+/* أنماط رسائل التنبيه */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+/* أنماط الروابط الجديدة */
+.contact-link {
+    color: #e0b48d;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
+
+.contact-link:hover {
+    color: #ffd700;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .gallery-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-title-container {
+        padding: 10px 20px;
+    }
+    .contact-methods {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+        .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-title {
+        font-size: 1.5rem;
+    }    .title-container {
+        padding: 10px 15px;
+        max-width: 90%;
+    }
+        .contact-form-container {
+        padding: 15px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .about-title {
+        font-size: 1.8rem;
+    }
+    
+    .about-content {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-link {
+        font-size: 0.8rem;
+    }
+        .contact-card {
+        width: 100px;
+        padding: 8px;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* تعديلات للشاشات المتوسطة */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 صور في الصف */
+    }
+}
+
+/* تعديلات للتابلت */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 صور في الصف */
+    }
+    .contact-methods{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* تعديلات للجوال */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* صورتين في الصف */
+    }
+    .contact-methods{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(6, 1fr); /* 6 أعمدة */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
+    }
+}
+
+@media (max-width: 575px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* عمودين في الجوال الصغير */
+    }
+}

@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="home-container">
+    <div class="vertical-buttons">
+        <a href="{% url 'about' %}" class="nav-btn">
+            <div class="btn-title"> {% trans "ABOUT US" %}</div>
+        </a>
+        <a href="{% url 'gallery' %}" class="nav-btn">
+            <div class="btn-title"> {% trans "OUR GALLERY" %}</div>
+        </a>
+        <a href="{% url 'contact' %}" class="nav-btn">
+            <div class="btn-title"> {% trans "CONTACT US" %}</div>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="contact-page">
+    <!-- العنوان الرئيسي -->
+    <div class="contact-title-container">
+        <h1 class="contact-title"> {% trans "CONTACT US" %}</h1>
+    </div>
+    
+    <!-- وسائل التواصل بألوان ثابتة -->
+    <div class="contact-methods">
+        <!-- العنوان - أحمر -->
+        <div class="contact-card">
+            <div class="contact-icon address-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>{% trans "Address" %}</h3>
+            <p class="contact-info">{% trans "Germany ,Leverkusen" %}</p>
+        </div>
+        
+        <!-- الهاتف - أسود -->
+        <div class="contact-card">
+            <a href="tel:+963111234567" class="contact-icon phone-icon">
+                <i class="fas fa-phone"></i>
+            </a>
+            <h3> {% trans "Phone Number" %}</h3>
+            <p class="contact-info"></p>
+        </div>
+        <br>
+        <!-- واتساب - أخضر -->
+        <div class="contact-card">
+            <a href="https://wa.me/+4915755536654" target="_blank" rel="noopener noreferrer" class="contact-icon whatsapp-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <h3> {% trans "Whatsapp" %}</h3>
+            <p class="contact-info"></p>
+        </div>
+        
+        <!-- فيسبوك - أزرق -->
+        <div class="contact-card">
+            <a href="https://facebook.com/Sofi Zos" target="_blank" rel="noopener noreferrer" class="contact-icon facebook-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <h3> {% trans "Facebook" %}</h3>
+            <p class="contact-info"></p>
+        </div>
+        <!-- email -->
+        <div class="contact-card">
+            <a href="mailto:avinbashir79@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-icon email-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <h3> {% trans "Email" %}</h3>
+            <p class="contact-info"></p>
+        </div>
+        
+    </div>
+    
+  
+{% endblock %}

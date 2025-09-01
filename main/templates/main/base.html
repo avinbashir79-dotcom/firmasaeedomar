@@ -1,0 +1,147 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAEED OMAR COMPANY</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></head>
+<style>
+
+.site-header {
+  display: flex;
+  justify-content: space-between; /* المسافة بين اللوغو والدروب داون */
+  align-items: center;
+  background: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+.logo h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+/* Dropdown جهة اليسار */
+.lang-switcher.left {
+   position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.globe-icon {
+  font-size: 18px;
+}
+
+.language-select {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.language-select:hover {
+  border-color: #444;
+}
+
+</style>
+<body>
+    
+    <!-- رأس الصفحة -->
+    <header class="main-header">
+     <!-- شريط الترجمة العلوي -->
+
+  <!-- قائمة تبديل اللغة -->
+  <div class="lang-switcher left">
+    <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <select name="language" onchange="this.form.submit()" class="language-select">
+        <option value="ar" {% if request.LANGUAGE_CODE == "ar" %}selected{% endif %}>العربية</option>
+        <option value="de" {% if request.LANGUAGE_CODE == "de" %}selected{% endif %}>Deutsch</option>
+        <option value="en" {% if request.LANGUAGE_CODE == "en" %}selected{% endif %}>English</option>
+      </select>
+    </form>
+  </div>
+
+
+
+        <div class="logo-container">
+            <img src="{% static 'main/images/logos/logo.jpeg' %}" alt="شعار سعيد عمر للسراميك">
+            <div class="company-info">
+                <h1>{% trans "SAEED OMAR COMPANY" %}</h1>
+                <p class="slogan">{% trans "Quality in work ... Years of experience ... Commitment to work" %}</p>
+            </div>
+            
+        </div>
+
+        <!-- الخط الفاصل تحت الهيدر -->
+        <div class="header-divider"></div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="main-footer">
+        <div class="footer-divider"></div>
+        <p>SAEED OMAR COMPANY - 2025 © جميع الحقوق محفوظة</p>
+    </footer>
+
+
+     <script>
+
+
+        // عناصر الترجمة
+        const languageOptions = document.querySelectorAll('.language-options a');
+        const currentLanguageElement = document.getElementById('current-language');
+        
+        // دالة تغيير اللغة
+        function changeLanguage(lang, dir) {
+            // تغيير اتجاه الصفحة
+            document.documentElement.dir = dir;
+            document.documentElement.lang = lang;
+            
+            // تحديث النصوص
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // تحديث اللغة الحالية
+            currentLanguageElement.textContent = translations[lang]['current'];
+            
+            // حفظ اللغة المختارة
+            localStorage.setItem('selectedLanguage', lang);
+            localStorage.setItem('textDirection', dir);
+        }
+        
+        // إضافة事件 للمختار اللغة
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const dir = this.getAttribute('data-dir');
+                changeLanguage(lang, dir);
+            });
+        });
+        
+        // تحميل اللغة المحفوظة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+            const savedDirection = localStorage.getItem('textDirection') || 'rtl';
+            changeLanguage(savedLanguage, savedDirection);
+        });
+    </script>
+</body>
+</html>

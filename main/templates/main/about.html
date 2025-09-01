@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="about-container">
+    <!-- العنوان مع خلفية شفافة -->
+   
+    
+    <div class="about-content">
+         <div class="title-container">         
+            <h1 class="about-title">{% trans "ABOUT OUR COMPANY" %}</h1>
+        </div>
+
+<p> {% trans "We are Saeed Omar Ceramics Company, offering the finest ceramic tiles at high quality and competitive prices. Established over 10 years ago, we have extensive experience in the ceramic and porcelain industry." %}</p>
+
+<p> {% trans "Our mission is to provide high-quality products, adhere to delivery deadlines, and provide excellent customer service. We pride ourselves on offering the latest designs and colors to suit all tastes." %}</p>       
+  
+<p> {%trans "We work with the best local and international factories to supply the finest raw materials, and we always strive to achieve the satisfaction of our valued customers." %}</p>
+</div>
+    
+   
+   
+</div>
+{% endblock %}
