@@ -85,12 +85,11 @@ WSGI_APPLICATION = 'ceramic_project.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}",  # SQLite محليًا
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=bool(os.getenv("DATABASE_URL"))  # تفعيل ssl فقط على Render
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
