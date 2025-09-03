@@ -81,19 +81,16 @@ WSGI_APPLICATION = 'ceramic_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 # الإعداد الافتراضي محليًا: SQLite
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    "default": dj_database_url.config(
+        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}",  # SQLite محليًا
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
-# إذا وُجد DATABASE_URL في متغيرات البيئة (على Render) بدّل لبوستجرس
-if os.environ.get("DATABASE_URL"):
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=600,
-        ssl_require=True  # يعمل مع رابط الـ External DB في Render
-    )
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -114,8 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
+
 
 LANGUAGE_CODE = 'en'
 
@@ -130,6 +126,7 @@ LANGUAGES = [
     ('de', _('Deutsch')),
     # أضف لغات أخرى حسب الحاجة
 ]
+
 
 # تحديد مسارات ملفات الترجمة
 LOCALE_PATHS = [
@@ -149,6 +146,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STORAGES = {
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},
 }
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -157,6 +157,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # الملفات الوسيطة
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 
