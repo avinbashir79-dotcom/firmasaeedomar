@@ -1,26 +1,25 @@
-# Django و Channels
-Django==5.0.4
 asgiref==3.8.1
-channels==4.1.0
+Babel==2.15.0
+certifi==2024.2.2
+charset-normalizer==3.3.2
+click==8.1.7
+colorama==0.4.6
+cryptography==42.0.7
 daphne==4.1.2
 dj-database-url==2.2.0
-
-# قواعد بيانات
-mysqlclient==2.2.0        # لو تستخدم MySQL
-# psycopg2-binary==2.9.9  # لو تستخدم PostgreSQL (اختياري)
-
-# Forms و REST API
-djangorestframework>=3.14,<4
+Django==5.0.4
 django-crispy-forms==2.4
+djangorestframework>=3.14,<4
 django-phonenumber-field==7.3.0
-
-# تحسين ملفات static
-whitenoise==6.6.0
-
-# ملفات الصور والفيديوهات (اختياري حسب المشروع)
+gunicorn==22.0.0
+idna==3.7
+phonenumbers==8.13.37
 pillow==10.3.0
-opencv-python==4.8.0.76
-
-# HTTP requests
+psycopg2-binary==2.9.9
+python-gettext==5.0
 requests==2.31.0
+sqlparse==0.5.0
+typing_extensions==4.11.0
+tzdata==2024.1
 urllib3==2.2.1
+whitenoise==6.6.0
