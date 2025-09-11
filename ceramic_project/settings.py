@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "changeme-in-production")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['avinbashir12.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'avinbashir12.pythonanywhere.com']
 CSRF_TRUSTED_ORIGINS = ["https://companysaeedomar.onrender.com"]
 
 # Application definition

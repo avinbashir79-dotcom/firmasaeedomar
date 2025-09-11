@@ -82,7 +82,7 @@ msgstr "Deutschland, Leverkusen"
 
 #: .\main\templates\main\contact.html:28
 msgid "Phone Number"
-msgstr "Telefonnummer"
+msgstr "Telefon"
 
 #: .\main\templates\main\contact.html:37
 #, fuzzy
