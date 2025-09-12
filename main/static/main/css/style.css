@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Tajawal', sans-serif;
-    background-image: url('../images/backgrounds/bac5.png');
+    background-image: url('../images/backgrounds/bac6.png');
     background-size: cover;
     background-color: #ffffff;
     background-repeat: no-repeat;
@@ -526,6 +526,13 @@ body::before {
 
 }
 
+.map-link {
+    color: inherit;      /* يستخدم نفس لون النص المحيط */
+    text-decoration: none; /* إزالة الخط السفلي */
+    cursor: pointer;      /* يظهر اليد عند المرور */
+}
+
+
 .contact-icon:hover {
     background-color: #e0b48d;
     color: #000;
@@ -743,7 +750,7 @@ body::before {
         padding: 10px 15px;
         max-width: 90%;
     }
-        .contact-form-container {
+    .contact-form-container {
         padding: 15px;
     }
     
@@ -762,7 +769,7 @@ body::before {
     }
     .lang-switcher.left{
         top: 5px;
-        left: 5px;
+        right: 5px;
     }
     .language-select {
         font-size: 10px;   /* أصغر شوي */

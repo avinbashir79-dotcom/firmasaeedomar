@@ -16,11 +16,13 @@
     {% if gallery_images %}
     <div class="gallery-grid">
         {% for img in gallery_images %}
-        <div class="gallery-item">
+        <div class="gallery-item" >
             <!-- استخدم المسار الصحيح للصورة -->
+            <a href="{% static img %}" class="glightbox" >
             <img src="{% static img %}" 
                  alt="معرض أعمال سعيد عمر للسراميك" 
                  loading="lazy">
+        </a>
         </div>
         {% endfor %}
     </div>
